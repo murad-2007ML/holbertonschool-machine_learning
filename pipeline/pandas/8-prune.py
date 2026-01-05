@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """remove NaN"""
-import pandas as pd
 
 
 def high(df):
