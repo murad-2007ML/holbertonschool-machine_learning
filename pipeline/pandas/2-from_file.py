@@ -5,4 +5,4 @@ import pandas as pd
 
 def from_file(filename, delimiter):
     """loading data from array"""
-    return pd.read_csv("filename", delimiter=sep)
+    return pd.read_csv("filename", sep=delimiter)
