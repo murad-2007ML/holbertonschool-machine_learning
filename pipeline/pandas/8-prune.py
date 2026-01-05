@@ -4,5 +4,4 @@
 
 def high(df):
     """remove NaN"""
-    df = df.dropna(subset=["Close"], inplace=False)
-    return df[["Timestamp", "Close"]]
+    df = df.dropna(subset=["Close"])
