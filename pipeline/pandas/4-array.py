@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """high and close"""
-import pandas as pd
+import numpy as np
 
 
 def array(df):
