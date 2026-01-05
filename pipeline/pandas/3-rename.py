@@ -6,6 +6,6 @@ import pandas as pd
 def rename(df):
     """taking input and performing"""
     df = df.rename(columns={'Timestamp': "Datetime"})
-    df['Datetime'] = pd.date_time(df['Datetime'], unit='s')
+    df['Datetime'] = pd.to_datetime(df['Datetime'], unit='s')
     df = df.loc[:, ['Datetime', 'Close']]
     print(df.tail())
