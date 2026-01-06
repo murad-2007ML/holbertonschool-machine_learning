@@ -2,7 +2,7 @@
 """remove NaN"""
 
 
-def high(df):
+def prune(df):
     """remove NaN"""
     df = df.dropna(subset=["Close"])
     return df
