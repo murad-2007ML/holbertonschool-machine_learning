@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """filling miss values"""
 
-
 def fill(df):
     """
     Removes the Weighted_Price column.
