@@ -19,7 +19,7 @@ def bars():
             bottom=fruit[0] + fruit[1], label='oranges')
     plt.bar(people, fruit[3], width=0.5, color='#ffe5b4',
             bottom=fruit[0] + fruit[1] + fruit[2], label='peaches')
-    plt.yticks(np.arrange(0, 81, 10))
+    plt.yticks(np.arange(0, 81, 10))
     plt.ylim(0, 80)
     plt.ylabel("Quantity of Fruit")
     plt.title("Number of Fruit per Person")
