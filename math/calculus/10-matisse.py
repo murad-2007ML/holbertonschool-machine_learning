@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-""" that calculates the derivative of a polynomial"""
+"""That calculates the derivative of a polynomial."""
 
 
 def poly_derivative(poly):
     """
-    Return a new list of coefficients representing the derivative of the polynomial
+    Return a new list of coefficients representing the derivative
+    of the polynomial.
     """
     if type(poly) is not list or len(poly) == 0:
         return None
