@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""adds two arrays element-wise"""
+"""Adds two arrays element-wise"""
 
 
 def add_matrices2D(mat1, mat2):
     """
     You can assume that mat1 and mat2 are 2D matrices containing ints/floats
 
-    You can assume all elements in the same dimension are of the same type/shape
+    You can assume all elements in the same dimension are of the
+    same type/shape
 
     You must return a new matrix
 
