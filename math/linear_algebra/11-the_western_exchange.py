@@ -10,4 +10,4 @@ def np_transpose(matrix):
 
     You must return a new numpy.ndarray
     """
-    return matrix.transposewq
+    return matrix.transpose()
