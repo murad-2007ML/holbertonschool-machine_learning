@@ -1,19 +1,11 @@
 #!/usr/bin/env python3
-""" concatenates two matrices along a specific axis"""
+"""concatenates two matrices along a specific axis"""
 import numpy as np
 
 
 def np_cat(mat1, mat2, axis=0):
     """
-    You can assume that mat1 and mat2 can be interpreted as numpy.ndarrays
-
-    You must return a new numpy.ndarray
-
-    You are not allowed to use any loops or conditional statements
-
-    You may use: import numpy as np
-
-    You can assume that mat1 and mat2 are never empty
+    Concatenates two matrices along a specific axis using numpy.
+    Returns a new numpy.ndarray.
     """
-    new_mat = np.transpose((mat1, mat2), axis)
-    return new_mat
+    return np.concatenate((mat1, mat2), axis=axis)
