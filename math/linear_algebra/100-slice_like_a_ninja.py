@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
-"""slices a matrix along specific axes"""
-import numpy as np
+"""function to slice matrix along specific values"""
 
 
 def np_slice(matrix, axes={}):
+    """ slice matrix along specific value
+
+    Args:
+        matrix: Given matrix
+
+    Return:
+        the slice mat: slice_mat
+
     """
-    You can assume that matrix is a numpy.ndarray
-
-    You must return a new numpy.ndarray
-
-    axes is a dictionary where the key is an axis to slice along and the value is a tuple representing the slice to make along that axis
-
-    You can assume that axes represents a valid slice
-    """
-    slices = slice(None) * matrix.ndim
-    for axis, slice_args in axes.items():
-        slices[axis] = slice(*slice_args)
-
-    return matrix[tuple(slices)]
+    slice_mat = [slice(None, None, None)] * matrix.ndim
+    for k, v in sorted(axes.items()):
+        slice_val = slice(*v)
+        slice_mat[k] = slice_val
+    matrix = matrix[tuple(slice_mat)]
+    return matrix
