@@ -1,5 +1,5 @@
-  GNU nano 6.2                                                                                                          102-squashed_like_sardines.py *                                                                                                                  
-#!/usr/bin/env python3""" defines function that concatenates two matrices along a specific axis """
+#!/usr/bin/env python3
+""" defines function that concatenates two matrices along a specific axis """
 
 
 def matrix_shape(matrix):
@@ -18,28 +18,22 @@ def cat_matrices(mat1, mat2, axis=0):
     shape1 = matrix_shape(mat1)
     shape2 = matrix_shape(mat2)
 
-    # Validate that matrices have the same number of dimensions
     if len(shape1) != len(shape2):
         return None
 
-    # Validate all dimensions match EXCEPT for the concatenation axis
     for i in range(len(shape1)):
-        if i != axis:
-            if shape1[i] != shape2[i]:
-                return None
+        if i != axis and shape1[i] != shape2[i]:
+            return None
 
-    # Base Case: We've reached the target axis
     if axis == 0:
-        # Create a new list combining elements of both matrices
         return mat1 + mat2
 
-    # Recursive Step: Dive deeper into the nested lists
-    # We decrement the axis so that the next call knows it's closer to the target
+    # Breaking the recursive call into a cleaner loop to avoid E501
     new_matrix = []
     for i in range(len(mat1)):
-        result = cat_matrices(mat1[i], mat2[i], axis - 1)
-        if result is None:
+        res = cat_matrices(mat1[i], mat2[i], axis - 1)
+        if res is None:
             return None
-        new_matrix.append(result)
+        new_matrix.append(res)
 
     return new_matrix
