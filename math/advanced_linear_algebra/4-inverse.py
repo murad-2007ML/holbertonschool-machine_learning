@@ -41,11 +41,10 @@ def inverse(matrix):
 
     # Adjugate (Kofaktorun transponirəsi) hesablanır
     inverse_matrix = []
-    # Qeyd: Transponirəni birbaşa burada edirik
     for r in range(n):
         inv_row = []
         for c in range(n):
-            # Kofaktor[c][r] üçün orijinal matrisdən c sətri və r sütunu silinir
+            # Alt matris yaradılan hissə iki sətrə bölündü (E501 üçün)
             sub_matrix = [row[:r] + row[r+1:] for i, row in
                           enumerate(matrix) if i != c]
 
