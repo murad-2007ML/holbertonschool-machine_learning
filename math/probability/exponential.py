@@ -34,4 +34,4 @@ class Exponential:
         if x < 0:
             return 0
         pdf = self.lambtha * Exponential.e**((-self.lambtha) * x)
-        return pdf 
+        return pdf
