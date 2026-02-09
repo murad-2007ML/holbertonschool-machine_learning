@@ -2,6 +2,16 @@
 """a class Poisson that represents a poisson distribution"""
 
 
+def fact(a):
+    '''
+    calculating factorial
+    '''
+    s = 1
+    for i in range(1, a+1):
+        s *= i
+    return s
+
+
 class Poisson:
     """
     class to call methods of Poisson distribution
@@ -31,10 +41,19 @@ class Poisson:
         calculating pmf of poisson distribution
         """
         k = int(k)
-        factorial_pmf = 1
         if k < 0:
             return 0
-        for i in range(1, k+1):
-            factorial_pmf *= i
-        p = Poisson.e**(-self.lambtha)*self.lambtha**k/factorial_pmf
+        p = Poisson.e**(-self.lambtha)*self.lambtha**k/fact(k)
         return p
+
+    def cdf(self, k):
+        """
+        calculating cdf of poisson distribution
+        """
+        k = int(k)
+        if k < 0:
+            return 0
+        s = 0
+        for i in range(k+1):
+            s += Poisson.e**(-self.lambtha)*self.lambtha**i/fact(i)
+        return s
