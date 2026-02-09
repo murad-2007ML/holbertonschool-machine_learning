@@ -25,7 +25,11 @@ class Poisson:
                 raise ValueError("data must contain multiple values")
             else:
                 self.lambtha = (sum(data) / len(data))
+
     def pmf(self, k):
+        """
+        calculating pmf of poisson distribution
+        """
         k = int(k)
         factorial_pmf = 1
         if k < 0:
