@@ -26,6 +26,7 @@ class Poisson:
             else:
                 self.lambtha = (sum(data) / len(data))
     def pmf(self, k):
+        k = int(k)
         factorial_pmf = 1
         if k < 0:
             return 0
