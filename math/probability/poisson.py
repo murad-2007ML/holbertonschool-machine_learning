@@ -31,5 +31,5 @@ class Poisson:
             return 0
         for i in range(1, k+1):
             factorial_pmf *= i
-        p = e**(-self.lambtha)*self.lambtha**k/factorial_pmf
+        p = Poisson.e**(-self.lambtha)*self.lambtha**k/factorial_pmf
         return p
