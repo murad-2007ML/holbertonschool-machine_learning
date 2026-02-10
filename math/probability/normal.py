@@ -62,7 +62,7 @@ class Normal:
         return:  Cumulative distribution Function
         """
         xa = (x - self.mean) / ((2 ** 0.5) * self.stddev)
-        errof = (((4 / Normal.pi) ** 0.5) * (xa - (xa ** 3) / 3 +
+        errof = (((4 / Normal.π) ** 0.5) * (xa - (xa ** 3) / 3 +
                                              (xa ** 5) / 10 - (xa ** 7) / 42 +
                                              (xa ** 9) / 216))
         cdf = (1 + errof) / 2
