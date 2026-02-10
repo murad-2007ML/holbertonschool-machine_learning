@@ -44,3 +44,10 @@ class Normal:
         """
         x = z * self.stddev + self.mean
         return x
+
+    def pdf(self, x):
+        """
+        calculating pdf of normal distribution
+        """
+        f_x = (1/(((2*pi)**0.5)*self.stddev))*e**(-0.5*((self.z_score(x))**2))
+        return f_x
