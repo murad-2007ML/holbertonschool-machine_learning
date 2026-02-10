@@ -51,5 +51,7 @@ class Normal:
         """
         calculating pdf of normal distribution
         """
-        f_x = (1/(((2*Normal.π)**0.5)*self.stddev))*Normal.e**(-0.5*((self.z_score(x))**2))
+        coeff = 1 / (((2 * Normal.π) ** 0.5) * self.stddev)
+        exponent = -0.5 * (self.z_score(x) ** 2)
+        f_x = coeff * (Normal.e ** exponent)
         return f_x
