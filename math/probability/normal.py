@@ -55,3 +55,15 @@ class Normal:
         exponent = -0.5 * (self.z_score(x) ** 2)
         f_x = coeff * (Normal.e ** exponent)
         return f_x
+
+    def cdf(self, x):
+        """
+        param x: x parameter of the function
+        return:  Cumulative distribution Function
+        """
+        xa = (x - self.mean) / ((2 ** 0.5) * self.stddev)
+        errof = (((4 / Normal.pi) ** 0.5) * (xa - (xa ** 3) / 3 +
+                                             (xa ** 5) / 10 - (xa ** 7) / 42 +
+                                             (xa ** 9) / 216))
+        cdf = (1 + errof) / 2
+        return cdf
