@@ -4,6 +4,19 @@ Script to calculate a Binomial distribution
 """
 
 
+pi = 3.1415926536
+
+
+def fac(x):
+    '''
+    calculating factorial
+    '''
+    s = 1
+    for i in range(1, x+1):
+        s *= i
+    return s
+
+
 class Binomial:
     """
     class to show functions of binomial dist.
@@ -35,3 +48,15 @@ class Binomial:
             p = 1 - (variance / mean)
             self.n = int(round(mean/p))
             self.p = float(mean/self.n)
+
+    def pmf(self, k):
+        """
+        calculating pmf
+        """
+        k = int(k)
+        if k < 0:
+            return 0
+        n = self.n
+        pi = self.p
+        res = fac(n)/(fac(k)*fac(n-k))*(pi**k)*((1-pi)**(n-k))
+        return res
