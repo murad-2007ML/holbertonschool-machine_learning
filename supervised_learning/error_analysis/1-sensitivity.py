@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""Script to calculate the precision in a
+"""Script to calculate the sensitivity in a
     confusion matrix
 """
 
 import numpy as np
 
 
-def precision(confusion):
+def sensitivity(confusion):
     """
-    finding precision
+    finding sensivity
     """
     TP = np.diag(confusion)
-    FP = np.sum(confusion, axis=0) - TP
-    PPV = TP / (TP + FP)
-    return PPV
+    FN = np.sum(confusion, axis=1) - TP
+    TPR = TP / (TP + FN)
+    return TPR
