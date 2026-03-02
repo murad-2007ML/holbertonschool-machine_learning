@@ -58,3 +58,12 @@ class Neuron:
                 Y, np.log(A)) + np.multiply(
                 1 - Y, np.log(1.0000001 - A)))
         return C
+
+    def evaluate(self, X, Y):
+        """
+        evaluates the neuron's predictions
+        """
+        self.forward_prop(X)
+        self.cost(Y, self.__A)
+        predict = np.where(self.__A >= 0.5, 1, 0)
+        return predict, cost
