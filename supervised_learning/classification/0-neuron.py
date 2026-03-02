@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """script to define a single neurion performing binary classification"""
 
 import numpy as np
