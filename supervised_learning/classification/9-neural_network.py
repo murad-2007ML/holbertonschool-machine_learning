@@ -96,3 +96,15 @@ class NeuralNetwork:
 
         """
         return self.__A2
+
+        def forward_prop(self, X):
+            """
+            propagation of neural network
+            """
+            E1 = np.matmul(self.__W1, X) + self.__b1
+            sigmoid1 = 1 / (1 + np.exp(-E1))
+            self.__A1 = sigmoid1
+            E2 = np.matmul(self.__W2, self.__A1) + self.__b2
+            sigmoid2 = 1 / (1 + np.exp(-E2))
+            self.__A2 = sigmoid2
+            return self.__A1, self.__A2
