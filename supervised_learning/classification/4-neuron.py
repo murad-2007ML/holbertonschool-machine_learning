@@ -59,6 +59,11 @@ class Neuron:
                 1 - Y, np.log(1.0000001 - A)))
         return C
 
+    def MSE(self, Y, A):
+        m = Y.shape[1]
+        C = 1 / m * np.sum((A - Y) ** 2)
+        return C
+
     def evaluate(self, X, Y):
         """
         evaluates the neuron's predictions
@@ -66,4 +71,5 @@ class Neuron:
         self.forward_prop(X)
         cost = self.cost(Y, self.__A)
         predict = np.where(self.__A >= 0.5, 1, 0)
-        return predict, cost
+        MSE = self.MSE(Y, self.__A)
+        return predict, cost, MSE
