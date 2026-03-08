@@ -34,7 +34,9 @@ class DeepNeuralNetwork:
         prev = nx
         for i, layer in enumerate(layers, 1):
             if type(layer) is not int or layer <= 0:
-                raise TypeError("layers must be a list of positive integers")
+                raise TypeError(
+                    "layers must be a list of positive integers"
+                )
             self.__weights["W{}".format(i)] = (
                 np.random.randn(layer, prev) * np.sqrt(2 / prev)
             )
@@ -43,17 +45,23 @@ class DeepNeuralNetwork:
 
     @property
     def L(self):
-        """getter for __L"""
+        """
+        getter for __L
+        """
         return self.__L
 
     @property
     def cache(self):
-        """getter for __cache"""
+        """
+        getter for __cache
+        """
         return self.__cache
 
     @property
     def weights(self):
-        """getter for __weights"""
+        """
+        getter for __weights
+        """
         return self.__weights
 
     def forward_prop(self, X):
@@ -95,7 +103,8 @@ class DeepNeuralNetwork:
         cost = self.cost(Y, A)
 
         prediction = np.zeros_like(A)
-        prediction[np.argmax(A, axis=0), np.arange(A.shape[1])] = 1
+        prediction[np.argmax(A, axis=0),
+                   np.arange(A.shape[1])] = 1
 
         return prediction, cost
 
@@ -118,7 +127,9 @@ class DeepNeuralNetwork:
                     g_prime = A_curr * (1 - A_curr)
                 else:
                     g_prime = 1 - A_curr ** 2
-                dZ = np.matmul(weights_copy["W{}".format(i + 1)].T, dZ) * g_prime
+                dZ = np.matmul(
+                    weights_copy["W{}".format(i + 1)].T, dZ
+                ) * g_prime
 
             dW = np.matmul(dZ, A_prev.T) / m
             db = np.sum(dZ, axis=1, keepdims=True) / m
