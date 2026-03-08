@@ -6,6 +6,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 class DeepNeuralNetwork():
     """
     Class Deep Neural Network
