@@ -9,8 +9,7 @@ def optimize_model(network, alpha, beta1, beta2):
     adam = K.optimizers.Adam(
         learning_rate=alpha,
         beta_1=beta1,
-        beta_2=beta2,
-        epsilon=1e-2
+        beta_2=beta2
     )
     network.compile(
         optimizer=adam,
