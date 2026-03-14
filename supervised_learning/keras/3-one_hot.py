@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
-"""Script to laber vector to one hot in Keras"""
+"""Script to convert a label vector to a one-hot matrix in Keras."""
 
 import tensorflow.keras as K
 
 
 def one_hot(labels, classes=None):
-    """
-    one_hot matrix
-    """
-    One_hot = K.utils.to_caterogical(labels, 
-                                     num_classes=classes
-                                     )
-    return One_hot
+    """Converts a label vector into a one-hot matrix."""
+    one_hot_matrix = K.utils.to_categorical(labels, num_classes=classes)
+    return one_hot_matrix
