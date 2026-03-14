@@ -18,7 +18,7 @@ def train_model(network, data, labels, batch_size,
             monitor='val_loss',
             patience=patience
         )
-        callbacks.append(early_stop
+        callbacks.append(early_stop)
 
     if validation_data is not None and learning_rate_decay:
 
