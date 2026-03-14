@@ -4,10 +4,10 @@
 import tensorflow.keras as K
 
 
-def train_model(network, data, labels, batch_size, 
-                epochs, validation_data=None, 
-                early_stopping=False, patience=0, learning_rate_decay=False, 
-                alpha=0.1, decay_rate=1, 
+def train_model(network, data, labels, batch_size,
+                epochs, validation_data=None,
+                early_stopping=False, patience=0, learning_rate_decay=False,
+                alpha=0.1, decay_rate=1,
                 verbose=True, shuffle=False):
     """
     building neural networks with keras
@@ -19,7 +19,7 @@ def train_model(network, data, labels, batch_size,
             patience=patience
         )
         callbacks.append(early_stop)
-    
+ 
     if validation_data is not None and learning_rate_decay:
 
         def scheduler(epoch):
