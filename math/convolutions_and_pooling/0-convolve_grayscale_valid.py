@@ -26,7 +26,7 @@ def convolve_grayscale_valid(images, kernel):
     h_out = h - kh + 1
     w_out = w - kw + 1
 
-    convolved_out = np.zeros(m, h_out, w_out)
+    convolved_out = np.zeros((m, h_out, w_out))
     for i in range(h_out):
         for j in range(w_out):
             image = images[:, i: i + kh, j: j + kw]
