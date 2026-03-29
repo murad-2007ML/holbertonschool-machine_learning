@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""convolution on grayscale images with padding"""
+'''
+convolution with padding
+'''
 
 import numpy as np
 
@@ -24,18 +26,20 @@ def convolve_grayscale_padding(images, kernel, padding):
 
     Returns: an ndarray containing convolved images
     '''
+
     m, h, w = images.shape
     kh, kw = kernel.shape
 
     ph, pw = padding
 
-    h_out = (h + ph * 2) - kh + 1
-    w_out = (w - kw * 2) - kw + 1
+    h_out = (h + 2 * ph) - kh + 1
+    w_out = (w + 2 * pw) - kw + 1
 
     images_padded = np.pad(images, ((0, 0), (ph, ph), (pw, pw)),
                            mode='constant', constant_values=0)
 
     convolved_out = np.zeros((m, h_out, w_out))
+
     for i in range(h_out):
         for j in range(w_out):
             image = images_padded[:, i: i + kh, j: j + kw]
