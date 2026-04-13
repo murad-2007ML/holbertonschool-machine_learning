@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """Script to create an inception block"""
 
-import tensorflow.keras as K
-
 
 def inception_block(A_prev, filters):
     """
