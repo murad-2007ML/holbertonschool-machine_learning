@@ -12,7 +12,7 @@ def inception_block(A_prev, filters):
 
     F3 is the number of filters in the 3x3 convolution
 
-    F5R is the number of filters in the 1x1 convolution before the 5x5 
+    F5R is the number of filters in the 1x1 convolution before the 5x5
 
     F5 is the number of filters in the 5x5 convolution
 
