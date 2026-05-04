@@ -57,7 +57,8 @@ class NST:
     def scale_image(image):
         """ scales image dimensions and values to 0-1"""
         if type(image) is not np.ndarray or \
-            len(image.shape) != 3:
+            len(image.shape) != 3 or \
+            image.shape[2] != 3:
             raise TypeError("image must be a numpy.ndarray with shape (h, w, 3)")
 
         h, w, c = image.shape
