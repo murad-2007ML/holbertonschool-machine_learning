@@ -59,16 +59,21 @@ class NST:
         if type(image) is not np.ndarray or \
             len(image.shape) != 3:
             raise TypeError("image must be a numpy.ndarray with shape (h, w, 3)")
+
         h, w, c = image.shape
+
         if h > w:
             h_new = 512
             w_new = int(w * (512 / h))
         else:
             w_new = 512
             h_new = int(h * (512 / w))
+
         new_shape = (h_new, w_new)
+
         image = np.expand_dims(image, axis=0)
-        scaled_image = tf.image.resize_bicubic(image, new_shape)
+
+        scaled_image = tf.image.resize(image, new_shape, method='bicubic')
         scaled_image = tf.clip_by_value(scaled_image / 255, 0, 1)
 
         return scaled_image
