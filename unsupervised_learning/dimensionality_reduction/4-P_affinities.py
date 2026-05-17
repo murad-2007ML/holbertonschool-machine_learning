@@ -1,21 +1,12 @@
 #!/usr/bin/env python3
-"""Shannon entropy and P affinities"""
-
+"""A module that does the trick"""
 import numpy as np
 P_init = __import__('2-P_init').P_init
 HP = __import__('3-entropy').HP
 
 
 def P_affinities(X, tol=1e-5, perplexity=30.0):
-    """
-    Binary search to get P affinities so each gaussian
-    has the same perplexity
-    Args:
-        X:
-        tol:
-        perplexity:
-    Returns:
-    """
+    """A function that does the trick"""
     (n, d) = X.shape
     D, P, betas, H = P_init(X, perplexity)
 
